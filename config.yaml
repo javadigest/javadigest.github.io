@@ -3,7 +3,6 @@ baseUrl: "http://javadigest.org"
 title: "Java Digest"
 theme: "anubis"
 paginate: 10
-googleAnalytics: "G-12345"
 enableRobotsTXT: true
 
 #menu:
