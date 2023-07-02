@@ -1,5 +1,5 @@
 languageCode: "en-us"
-baseUrl: "http://javadigest.org"
+baseUrl: "https://javadigest.org"
 title: "Java Digest"
 theme: "anubis"
 paginate: 10
