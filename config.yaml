@@ -1,0 +1,41 @@
+languageCode: "en-us"
+baseUrl: "http://javadigest.org"
+title: "Java Digest"
+theme: "anubis"
+paginate: 10
+googleAnalytics: "G-12345"
+enableRobotsTXT: true
+
+#menu:
+#  main:
+#  - identifier: archive
+#    name: a curated list of latest java updates and other news from across the internet
+#    title: Archive
+#    url: /
+#    weight: 0   
+
+params:
+  author: "Java Digest"
+  email: no-reply@javadigest.org
+  avatar: "/images/me.png"
+  description: "a curated list of latest java updates and other news from across the internet"
+  dateFormat: "2006-01-02"
+  paginationSinglePost: true
+  style: light-with-switcher
+  readMore: true 
+  readNextPosts: 5
+  disableSummary: false
+  copyCodeButton: false
+  rssAsSocialIcon: true
+  mathjax: false 
+  disableComments: true
+  
+  # isso support
+  isso:
+    enabled: false # mandatory
+   
+# enable raw HTML in Markdown
+markup:
+  goldmark:
+    renderer:
+      unsafe: true 
