@@ -80,6 +80,10 @@ h3 {
     font-size: 2em;
 }
 
+.textBold{
+    font-weight: bolder;
+}
+
 /* Links */
 
 a {
