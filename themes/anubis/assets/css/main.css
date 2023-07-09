@@ -516,10 +516,9 @@ article header h1 a {
 }
 
 article img {
-    max-width: 100%;
-    display: block;
-    height: auto;
-    margin: 0 auto .5em;
+    display: inline-flex;
+    margin: 20px;
+    border: 1px black dotted;
 }
 
 article figcaption {
@@ -722,8 +721,11 @@ ul.language-select > li, ul.footer-menu > li {
 }
 
 /* Media Queries */
-
 @media (max-width: 840px) {
+    article img {
+        display: none;
+    }
+    
     .main-wrapper {
         margin: 0;
         max-width: none;

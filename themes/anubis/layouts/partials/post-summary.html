@@ -1,21 +1,40 @@
 <article class="post-list h-feed">
-    <div class="post-header">
-        <header>
-            <h1 class="p-name post-title{{ if .Params.favorite }} favorite{{end}}{{ if .Params.draft }} draft{{end}}"><a class="u-url" href="{{ .Params.remote_url }}">{{ trim .Title " " }}</a></h1>
-        </header>
-        {{ partial "post-language-switcher.html" . }}
+    <div style="display: inline-flex;">
+        {{ if .Params.image }}
+        <div>
+            <img src="{{ .Params.image }}" width="220" height="150"/>
+        </div>
+        {{ else }}
+        <div>
+            <img src="https://images.unsplash.com/photo-1623031345438-387dd3c45e9f" 
+            width="220" 
+            height="150"/>
+        </div>
+        {{ end }}
+        <div>
+            <div class="post-header">
+                <header>
+                    <h1 class="p-name post-title{{ if .Params.favorite }} favorite{{end}}{{ if .Params.draft }} draft{{end}}">
+                        <a class="u-url" href="{{ .Params.remote_url }}" target="_blank">{{ trim .Title " " }}</a>
+                    </h1>
+                </header>
+                {{ partial "post-language-switcher.html" . }}
+            </div>
+        
+            {{ if not .Site.Params.disableSummary }}
+                <div class="content post-summary p-summary">
+                    {{ .Description | safeHTML }}
+                </div>
+            {{ end }}
+            {{ if .Site.Params.readMore }}
+                <div class="read-more">
+                    <a class="u-url" href="{{ .Params.remote_url }}" target="_blank">
+                        {{ i18n "readMore" }}
+                    </a>
+                </div>
+            {{ end }}
+            
+            {{ partial "post-info.html" . }}
+        </div>
     </div>
-
-    {{ if not .Site.Params.disableSummary }}
-        <div class="content post-summary p-summary">
-            {{ .Description | safeHTML }}
-        </div>
-    {{ end }}
-    {{ if .Site.Params.readMore }}
-        <div class="read-more">
-            <a class="u-url" href="{{ .Params.remote_url }}">{{ i18n "readMore" }}</a>
-        </div>
-    {{ end }}
-    
-    {{ partial "post-info.html" . }}
 </article>
